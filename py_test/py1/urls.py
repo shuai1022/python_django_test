@@ -7,5 +7,6 @@ urlpatterns = [
     url(r'^vote/',views.vote,name='vote'),
     url(r'^$',views.index,name='index'),
     url(r'^pytest/',views.pytest,name='pytest'),
+    url(r'^dtest/',views.djan_test,name='djan_test'),
 
 ]

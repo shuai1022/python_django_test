@@ -1,12 +1,10 @@
 from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse
-from .models import Question,Choice
+from .models import Question,Choice,djangotest
 from django.template import RequestContext,loader
 # Create your views here.
 def index(request):
-    latest_question_list = Question.objects.order_by('-pub_date')[:5]
-    # output = ', '.join([p.question_text for p in latest_question_list])
-    # return HttpResponse(output)
+    latest_question_list = Question.objects.all()
     template = loader.get_template('py1/index.html')
     context = RequestContext(request,{'latest_question_list':latest_question_list})
     return HttpResponse(template.render(context))
@@ -38,4 +36,10 @@ def vote(request):
 def pytest(request):
     template = loader.get_template('py1/pytest.html')
     return HttpResponse(template.render())
+
+def djan_test(request):
+    test_content = djangotest.objects.all()
+    context = RequestContext(request,{'test_content':test_content})
+    template = loader.get_template('py1/djan_test.html')
+    return HttpResponse(template.render(context))
 
