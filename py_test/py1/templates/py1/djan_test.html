@@ -5,6 +5,11 @@
     <title></title>
 </head>
 <body>
-I am djan_test.html
+I am pytest.html
+{% if test_content %}
+    {% for content in test_content %}
+        <br>{{content.dname}}--{{content.dage}}
+    {% endfor %}
+{% endif%}
 </body>
 </html>

@@ -11,3 +11,7 @@ class Choice(models.Model):
     question = models.ForeignKey(Question)
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
+
+class djangotest(models.Model):
+    dname = models.CharField(max_length=200)
+    dage = models.IntegerField(default=0)
